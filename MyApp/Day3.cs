@@ -1,9 +1,15 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 public class Day3
 {
     public void Third()
     {
+
+        //Important Note: Strings are immutable, Arrays are mutable
+
         //---------------------STRING METHODS---------------------//
         /*
         //Length of string
@@ -60,7 +66,121 @@ public class Day3
         string b = "babu";
         System.Console.WriteLine(a.Equals(b));
         System.Console.WriteLine(a.Equals(b, StringComparison.OrdinalIgnoreCase));
-        */
+        
 
+        //Looping through and array
+        int[] ages = {10,20,30,40,50,60};
+        for(int i=0; i<=5; i++)
+        {
+           System.Console.WriteLine(ages[i]);
+        }
+        foreach(int n in ages)
+        {
+            System.Console.WriteLine(n);
+        }
+
+        //Sum of element inside array
+        int[] numbers = { 10, 20, 30, 40, 50 };
+        int sum = 0;
+        foreach(int n in numbers)
+        {
+            sum+=n;
+        }
+        Console.WriteLine(sum);
+
+
+        //Maximum and Minimum Number in an array
+        int[] numbers = { 10, 20, 30, 40, 50 };
+        int max = numbers[0];
+        int min = numbers[4];
+        foreach(int n in numbers)
+        {
+            if (n > max)
+            {
+                max = n;
+            }
+            if(n < min)
+            {
+                min = n;
+            }
+        }
+        Console.WriteLine(max);
+        Console.WriteLine(min);
+        
+
+        //---------------------ARRAY METHODS-----------------------// 
+
+        //Sorting Array
+        int[] numbers = {5, 4, 3, 2, 1};
+        Array.Sort(numbers);
+
+        foreach(int n in numbers){
+        Console.Write(n + " ");
+        }
+        
+
+        //Reverse Arryay
+        string[] names = {"Hello", "Hi", "Tata", "Bye"};
+        Array.Reverse(names);
+        foreach( string s in names)
+        {
+            System.Console.Write(s + " ");
+        }
+
+
+        //IndexOf Array
+        string[] names = {"Hello", "Hi", "Tata", "Bye"};
+        Console.WriteLine(Array.IndexOf(names, "Tata"));
+
+        
+        //Resize Array
+        int[] numbers = {5, 4, 3, 2, 1};
+        Array.Resize(ref numbers, 7);
+        numbers[5] = 0;
+        numbers[6] = -1;
+
+        foreach( int n in numbers)
+        {
+            System.Console.Write(n + " ");
+        }
+
+
+        //Clear Array
+        int[] numbers = {5, 4, 3, 2, 1};
+        Array.Clear(numbers, 1, 2);
+        foreach( int n in numbers)
+        {
+            System.Console.Write(n + " ");
+        }
+
+
+
+        //Copy Array
+        int[] numbers = {5, 4, 3, 2, 1};
+        int[] target = new int[5];
+        Array.Copy( numbers, target, numbers.Length); // source, destination and number of elements to copy
+        foreach( int t in target)
+        {
+            System.Console.Write(t + " ");
+        }
+        
+
+
+        //Exists Method => Checks if any element matches a condition and returns true or false
+        int[] numbers = {5, 4, 3, 2, 1};
+        bool hasEven = Array.Exists(numbers, n => n%5 == 0);
+        System.Console.WriteLine(hasEven);
+
+
+        //Find Method => checks condition and returns the matched value
+        int[] numbers = {5, 4, 3, 2, 1};
+        int value = Array.Find(numbers, n => n%3 == 0);  //Returns first matched value
+        Console.WriteLine(value);
+        int[] values = Array.FindAll(numbers, n=>n%2==0); //Returns all matched values and stores on array
+        foreach(int v in values)
+        {
+            Console.Write(v + " ");
+        }
+        */
     }
 }
