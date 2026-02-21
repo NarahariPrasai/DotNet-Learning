@@ -181,6 +181,82 @@ public class Day3
         {
             Console.Write(v + " ");
         }
+        
+
+
+        //------------------------------MULTIDIMENSIONAL ARRAY----------------------------//
+
+        //Creating and accessing 2D array
+        int [,] numbers = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}};
+        System.Console.WriteLine(numbers[1,2]);
+
+        //Looping in 2D array
+        for(int i=0; i<=2; i++)
+        {
+            for(int j=0; j<=4; j++)
+            {
+                Console.Write(numbers[i,j] + " ");
+            }
+            System.Console.WriteLine();
+        }
+        
+
+        //Creating and accessing 3D array
+        int[,,] numbers=
+        {
+            { 
+                {1, 2, 3},{4,5,6}
+            },//First Layer
+            { 
+                {4, 5, 6},{7, 8, 9}
+            }//Second Layer
+        };
+        System.Console.WriteLine(numbers[0,1,1]);
+
+        //Looping in 3D array
+        for( int i=0; i<=1; i++)
+        {
+            for(int j=0; j<=1; j++)
+            {
+                for(int k=0; k<=2; k++)
+                {
+                    System.Console.Write(numbers[i,j,k] + " ");
+                }
+                System.Console.WriteLine();  
+            }
+            System.Console.WriteLine();
+        }
+        
+
+        //Jagged Array
+        int[][] jaggedarray = new int[3][];
+        jaggedarray[0] = new int[] {10, 20, 30};
+        jaggedarray[1] = new int[] {40, 50};
+        jaggedarray[2] = new int[] {60, 70, 80, 90};
+
+        System.Console.WriteLine(jaggedarray[1][1]);
+        
+        //Looping Jagged Array
+        for( int i=0; i<jaggedarray.Length; i++)
+        {
+            for( int j=0; j<jaggedarray[i].Length; j++)
+            {
+                System.Console.Write(jaggedarray[i][j] + " ");
+            }
+            System.Console.WriteLine();
+        }
         */
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
