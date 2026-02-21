@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 public class Day3
@@ -246,10 +247,88 @@ public class Day3
             System.Console.WriteLine();
         }
         */
-        
-    }
-}
 
+
+        //================================STRING ANALYZER============================//
+        System.Console.Write("Write a sentence: ");
+        string input = Console.ReadLine()!;
+
+        //Counting character
+        string value = input.Trim().Replace(" ", "");
+        int result = value.Length;
+        System.Console.WriteLine($"Your sentence have {result} letters.");
+
+        //Counting words
+        string[] value1 = input.Trim().Split(" ");
+        int result1 = value1.Length;
+        System.Console.WriteLine($"Your sentence have {result1} words.");
+
+        //Longest Word
+        int max = 0;
+        string LongestWord= "";
+        foreach(string value3 in value1)
+        {
+            int Wordlength = value3.Length;
+            if( Wordlength > max)
+            {
+                max = Wordlength;
+                LongestWord = value3;
+            }
+
+        }
+        System.Console.WriteLine($"The longest word on your sentence is {LongestWord}.");
+
+        //Revesing Each Word Individually
+        System.Console.Write("The reverse of each words are: ");
+        foreach(string value4 in value1)
+        {
+            string word =  value4;
+            char[] chararray = word.ToCharArray();
+            Array.Reverse(chararray);
+            string reversed = new string(chararray);
+            System.Console.Write(reversed + " ");
+        }
+        System.Console.WriteLine();
+
+        //Counting Vowels
+        char[] InputCharArray = input.ToCharArray();
+        int count = 0;
+        foreach( char c in InputCharArray)
+        {
+            if( c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            {
+                count++;
+            }
+        }
+        System.Console.WriteLine($"There are {count} vowels on your sentence.");
+
+        //Removing Duplicate words
+        /*String oldvalue = "";
+        foreach( string value5 in value1)
+        {
+            string newvalue = value5;
+            if(newvalue.Equals(oldvalue, StringComparison.OrdinalIgnoreCase))
+            {
+                oldvalue = newvalue;
+                
+            }
+
+        }*/
+
+        //Converting sentence to TitleCase
+        System.Console.WriteLine("The titlecase of this sentence is: ");
+        foreach(string value6 in value1)
+        {
+            string newdata = value6;
+            char[] newchararray = newdata.ToCharArray();
+            newchararray[0] = char.ToUpper(newchararray[0]);
+            string lastvalue = new string(newchararray);
+            System.Console.Write(lastvalue + " ");
+            
+        }
+    }
+
+}
 
 
 
