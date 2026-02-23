@@ -3,20 +3,51 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 public class Day3
 {
     public void Third()
     {
+        //------------------------CHAR METHODS--------------------------//
+        /*
+        char c = 'x';
+
+        System.Console.WriteLine(char.IsLetter(c)); 
+
+        System.Console.WriteLine(char.IsDigit(c)); 
+
+        System.Console.WriteLine(char.IsLetterOrDigit(c));
+
+        System.Console.WriteLine(char.IsWhiteSpace(c)); 
+
+        System.Console.WriteLine(char.ToUpper(c));
+
+        System.Console.WriteLine(char.ToLower(c));
+
+        System.Console.WriteLine(char.IsUpper(c));
+
+        System.Console.WriteLine(char.IsLower(c));
+
+        System.Console.WriteLine(char.IsPunctuation(c));
+
+
+
 
         //Important Note: Strings are immutable, Arrays are mutable
 
         //---------------------STRING METHODS---------------------//
-        /*
+        
+        //Converting Char Array into String
+        char[] array = {'1', '2', '3', '4', '5'};
+        string arraytostring = new string(array);
+        System.Console.WriteLine(arraytostring);
+
         //Length of string
         string name = "BaburaoGaitonde";
         int length = name.Length;
         Console.WriteLine(length);
+
 
         //ToUpper and ToLower
         name = name.ToUpper();
@@ -111,6 +142,15 @@ public class Day3
 
         //---------------------ARRAY METHODS-----------------------// 
 
+        //Converting string into character array
+        string namaye = "Hareram";
+        char[] newchararray = namaye.ToCharArray();
+        foreach(char c in newchararray)
+        {
+            System.Console.WriteLine(c + " ");
+        }
+        
+
         //Sorting Array
         int[] numbers = {5, 4, 3, 2, 1};
         Array.Sort(numbers);
@@ -187,8 +227,8 @@ public class Day3
 
         //------------------------------MULTIDIMENSIONAL ARRAY----------------------------//
 
-        //Creating and accessing 2D array
-        int [,] numbers = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}};
+        //2D Array Initialization statically
+        int [,] numbers = {{1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15}}; 
         System.Console.WriteLine(numbers[1,2]);
 
         //Looping in 2D array
@@ -200,9 +240,9 @@ public class Day3
             }
             System.Console.WriteLine();
         }
-        
 
-        //Creating and accessing 3D array
+         
+        //Creating and accessing 3D array 
         int[,,] numbers=
         {
             { 
@@ -246,7 +286,7 @@ public class Day3
             }
             System.Console.WriteLine();
         }
-        */
+        
 
 
         //================================STRING ANALYZER============================//
@@ -295,25 +335,36 @@ public class Day3
         int count = 0;
         foreach( char c in InputCharArray)
         {
-            if( c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            char lower = char.ToLower(c);
+            if( lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u')
             {
                 count++;
             }
         }
         System.Console.WriteLine($"There are {count} vowels on your sentence.");
 
-        //Removing Duplicate words
-        /*String oldvalue = "";
-        foreach( string value5 in value1)
-        {
-            string newvalue = value5;
-            if(newvalue.Equals(oldvalue, StringComparison.OrdinalIgnoreCase))
-            {
-                oldvalue = newvalue;
-                
-            }
 
-        }*/
+        //Removing Duplicate words
+        bool isDupli = false;
+        for(int i=0; i<value1.Length-1; i++)
+        {
+            for(int j=1; j<Value1.Length; j++)
+                {
+                    if(value1[i].Equals(value1[j], StringComparison.OrdinalIgnoreCase))
+                        {
+                            isDupli = true;
+                            break;
+                        }
+                        System.Console.WriteLine(value[i] + " ");   
+                }
+
+
+        if (!isDupli)
+        {
+            System.Console.WriteLine(value[] + " ");
+        }
+        }
+
 
         //Converting sentence to TitleCase
         System.Console.WriteLine("The titlecase of this sentence is: ");
@@ -326,6 +377,32 @@ public class Day3
             System.Console.Write(lastvalue + " ");
             
         }
+        */
+        int sum = 0;
+        int max = 0;
+        int largest = 0;
+        int[,] numbers = new int[3,3];
+        for(int i=0; i<numbers.GetLength(0); i++)
+        {
+            for(int j=0; j<numbers.GetLength(1); j++)
+            {
+                System.Console.WriteLine($"Enter value for index [{i},{j}]: ");
+                int value = int.Parse(Console.ReadLine()!);
+                numbers[i,j]= value;
+                sum += value;
+
+                if(max < value)
+                {
+                    largest = value;
+                    max = value;
+                }
+            }
+        }
+        System.Console.WriteLine($"The sum of all elements is {sum}");
+        int average = sum/9;
+        System.Console.WriteLine($"The average of all elements is {average}");
+        System.Console.WriteLine($"The largest element is {largest}");
+
     }
 
 }
