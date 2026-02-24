@@ -377,7 +377,7 @@ public class Day3
             System.Console.Write(lastvalue + " ");
             
         }
-        */
+        
         int sum = 0;
         int max = 0;
         int largest = 0;
@@ -402,6 +402,54 @@ public class Day3
         int average = sum/9;
         System.Console.WriteLine($"The average of all elements is {average}");
         System.Console.WriteLine($"The largest element is {largest}");
+        */
+
+        int k = 0;
+        int j;
+        int highest = 0;
+        int sum = 0;
+        int[,]numbers = new int[3,4];
+        for(int i=0; i<numbers.GetLength(0); i++)
+        {
+            for( j=0; j<numbers.GetLength(1); j++)
+            {
+                System.Console.Write($"Enter the value of index[{i},{j}]: ");
+                int value = int.Parse(Console.ReadLine()!);
+                numbers[i,j] = value;
+                sum += value;
+            }
+            System.Console.WriteLine($"The sum of row {i} is {sum}");
+            if (sum > highest)
+            {
+                highest = sum;
+                k = i;
+            }
+            sum = 0;
+        }
+        System.Console.WriteLine($"The row with highest total is {k}.");
+
+        int answer = 0;
+        int colsum = 0;
+        int b = 0;
+        int c = 0;
+        int veryhigh = 0;
+        for(int a=0; a<numbers.GetLength(1); a++)
+        {
+            for(b=0; b<numbers.GetLength(0); b++)
+            {
+                answer = numbers[b,a];
+                colsum += answer;
+            }
+            System.Console.WriteLine($"The sum of culumn {a} is {colsum}.");
+            if(colsum > veryhigh)
+            {
+                veryhigh = colsum;
+                c = a;
+            }
+            colsum = 0;
+        }
+        System.Console.WriteLine($"The column with highest total is {c}.");
+
 
     }
 
