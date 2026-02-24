@@ -378,6 +378,8 @@ public class Day3
             
         }
         
+
+        //=======================TASK 1 - SUM, AVERAGE AND LARGEST IN 2D ARRAY==============================//
         int sum = 0;
         int max = 0;
         int largest = 0;
@@ -403,6 +405,8 @@ public class Day3
         System.Console.WriteLine($"The average of all elements is {average}");
         System.Console.WriteLine($"The largest element is {largest}");
 
+
+        //===================================TASK 2- COLUM AND ROW OPERATIONS IN 2D ARRAY==================//
         int k = 0;
         int j;
         int highest = 0;
@@ -448,8 +452,9 @@ public class Day3
             colsum = 0;
         }
         System.Console.WriteLine($"The column with highest total is {c}.");
-        */
+        
 
+        //========================TASK 3- TRANSPOSE OF MATRIX=====================//
         int[,] numbers = new int[3,3];
         int[,] transpose = new int[3,3];
         for(int i=0; i<numbers.GetLength(0); i++)
@@ -471,8 +476,44 @@ public class Day3
                 System.Console.Write(transpose[i,j] + " ");
             }
             System.Console.WriteLine();
-        }
+        }*/
         
+
+        //=========================TASK 4 - STUDENTS RECORD SYSTEM=====================//
+        int LargestStudentAvg = 0;
+        int topclass = 0;
+        int topstd = 0;
+        int sum1 = 0;
+        int sum2 = 0;
+        int marks = 0;
+        int[,,] Schsystem = new int[2, 3, 4];
+        for(int i=0; i<Schsystem.GetLength(0); i++)
+        {
+            for(int j=0; j<Schsystem.GetLength(1); j++)
+            {
+                for(int k=0; k<Schsystem.GetLength(2); k++)
+                {
+                    System.Console.Write($"Enter marks of subject {k} for student {j} of class {i}: ");
+                    marks = int.Parse(Console.ReadLine()!);
+                    Schsystem[i, j, k] = marks;
+                    sum1 += marks;
+                }
+                System.Console.WriteLine($"The average marks of student {j} is {sum1/Schsystem.GetLength(2)}");
+                if(sum1 > LargestStudentAvg)
+                {
+                    LargestStudentAvg = sum1;
+                    topstd = j;
+                    topclass = i;
+                }
+                sum2 += sum1;
+                sum1 = 0;
+            }
+            int avg = Schsystem.GetLength(1) * Schsystem.GetLength(2);
+            System.Console.WriteLine($"The average marks of class {i} is {sum2/avg}");
+            avg = 0;
+            sum2 = 0;
+        }
+        System.Console.WriteLine($"The Topper of School is Student {topstd} of Class {topclass} ");
     }
 
 }
