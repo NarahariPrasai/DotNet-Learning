@@ -402,7 +402,6 @@ public class Day3
         int average = sum/9;
         System.Console.WriteLine($"The average of all elements is {average}");
         System.Console.WriteLine($"The largest element is {largest}");
-        */
 
         int k = 0;
         int j;
@@ -449,8 +448,31 @@ public class Day3
             colsum = 0;
         }
         System.Console.WriteLine($"The column with highest total is {c}.");
+        */
 
+        int[,] numbers = new int[3,3];
+        int[,] transpose = new int[3,3];
+        for(int i=0; i<numbers.GetLength(0); i++)
+        {
+            for(int j=0; j<numbers.GetLength(1); j++)
+            {
+                System.Console.Write($"Enter value for index[{i},{j}]: ");
+                int value = int.Parse(Console.ReadLine()!);
+                numbers[i,j] = value;
+            }
+        }
 
+        System.Console.WriteLine("The transpose of this matrix is: ");
+        for(int i=0; i<transpose.GetLength(0); i++)
+        {
+            for( int j=0; j<transpose.GetLength(1); j++)
+            {
+                transpose[i,j] = numbers[j,i];
+                System.Console.Write(transpose[i,j] + " ");
+            }
+            System.Console.WriteLine();
+        }
+        
     }
 
 }
