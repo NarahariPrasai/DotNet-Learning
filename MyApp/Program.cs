@@ -1,10 +1,23 @@
 ﻿using System;
+using System.IO.Pipelines;
 
 class Program
 {
-    static void Main()
+        /* int a;
+        int b;
+    void add()
     {
-        
+        int result = a + b;
+        System.Console.WriteLine(result);
+    }
+    */
+    static void Main(string[] args)
+    {
+        /*Program p1 = new Program();
+        p1.a = 20;
+        p1.b = 30;
+        p1.add();*/
+
         /*..............Day1.....................
         Basics B1 = new Basics();
         B1.First();
@@ -14,9 +27,14 @@ class Program
         Day2 d2 = new Day2();
         d2.Second();*/
 
-        /*..................Day3..............*/
+        /*..................Day3..............
         Day3 d3 = new Day3();
         d3.Third();
+        */
+
+        /*...................Day4..............*/
+        Day4 d4 = new Day4();
+        d4.Forth();
 
 
 

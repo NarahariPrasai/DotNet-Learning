@@ -476,7 +476,7 @@ public class Day3
                 System.Console.Write(transpose[i,j] + " ");
             }
             System.Console.WriteLine();
-        }*/
+        }
         
 
         //=========================TASK 4 - STUDENTS RECORD SYSTEM=====================//
@@ -514,6 +514,9 @@ public class Day3
             sum2 = 0;
         }
         System.Console.WriteLine($"The Topper of School is Student {topstd} of Class {topclass} ");
+        */
+
+        
     }
 
 }
