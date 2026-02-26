@@ -32,10 +32,16 @@ class Program
         d3.Third();
         */
 
-        /*...................Day4..............*/
-        Day4 d4 = new Day4();
+        /*...................Day4..............
+        day d4 = new Day4();
         d4.Forth();
+        */
 
+        /*.............Constructors...............*/
+        Customer c = new Customer(1, "Nischal");
+        System.Console.WriteLine(c.Id);
+        System.Console.WriteLine(c.Name); 
+        
 
 
 
