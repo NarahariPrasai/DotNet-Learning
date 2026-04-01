@@ -366,17 +366,7 @@ public class Day3
         }
 
 
-        //Converting sentence to TitleCase
-        System.Console.WriteLine("The titlecase of this sentence is: ");
-        foreach(string value6 in value1)
-        {
-            string newdata = value6;
-            char[] newchararray = newdata.ToCharArray();
-            newchararray[0] = char.ToUpper(newchararray[0]);
-            string lastvalue = new string(newchararray);
-            System.Console.Write(lastvalue + " ");
-            
-        }
+        
         
 
         //=======================TASK 1 - SUM, AVERAGE AND LARGEST IN 2D ARRAY==============================//

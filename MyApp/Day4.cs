@@ -20,23 +20,31 @@ using System.Security.AccessControl;
 
 public class Customer
 {
-    public int Id = 0;
+    public int Id = 0
+    
+    ;
+
+
     public string Name = "unknown";
 
     public Customer()
     {
-        
+        System.Console.WriteLine(Id);
+        System.Console.WriteLine(Name);
     }
 
     public Customer(int id)
     {
         this.Id = id;
         this.Name = "Unknown";
+        System.Console.WriteLine(Id);
     }
     public Customer(int id, string name)
     {
         this.Id = id;
         this.Name = name;
+        System.Console.WriteLine(Id);
+        System.Console.WriteLine(Name);
     }
 }
 

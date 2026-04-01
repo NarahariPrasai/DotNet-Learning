@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO.Pipelines;
 
-class Program
+public class Program
 {
         /* int a;
         int b;
@@ -37,12 +37,41 @@ class Program
         d4.Forth();
         */
 
-        /*.............Constructors...............*/
+        /*.............Constructors...............
         Customer c = new Customer(1, "Nischal");
         System.Console.WriteLine(c.Id);
         System.Console.WriteLine(c.Name); 
-        
+        */ 
 
+        /*
+        Customer Bhim = new Customer();
+        Customer Manish = new Customer(1);  
+        Customer Hari = new Customer(1, "Nare");*/
+        
+        /*
+        Cw c = new Cw();
+        c.Classwork();
+        */
+
+    
+    Student s1 = new Student( 1, "Aman");
+    Student s2 = new Student( 2, "Bhim");
+    Console.WriteLine($"Name: {s1.name} , ID: {s1.id}");
+
+    }
+}
+
+public class Student
+{
+    
+    public int id;
+    public string name;
+
+
+    public Student( int id, string name)
+    {
+       id = 0;
+       name = "unknown";
 
 
     }
