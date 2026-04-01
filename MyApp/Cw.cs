@@ -15,7 +15,7 @@ public class Cw
 
 
             int hcf = 1;
-            Console.WriteLine("Enter first number:");
+            Console.WriteLine("Enter the first number:");
             int a = int.Parse(Console.ReadLine()!);
             Console.WriteLine("Enter second number:");
             int b = int.Parse(Console.ReadLine()!);
